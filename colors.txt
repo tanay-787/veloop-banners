@@ -1,0 +1,14 @@
+# VELOOP Rewards - Color Palette Tokens
+# Primary platform background from spec: #161827
+
+Deep navy: #000035
+Soft blue: #93CAED
+Muted blue: #aec8e1
+Gold: #FFD700
+Soft gold: #FFE249
+Warm yellow: #FED426
+Silver: #C0C0C0
+White: #FEFDFC
+Muted purple: #803780
+Soft neutral colors: #27272a
+Slightly lighter card surface: #2e2e31
