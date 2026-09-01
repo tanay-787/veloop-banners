@@ -72,12 +72,12 @@ export const ViewportSandbox: React.FC<ViewportSandboxProps> = ({
   const isHeightCompliant = height >= minHeight && height <= maxHeight
 
   return (
-    <div className={styles.sandboxWrapper}>
+    <div className={`w-100 flex-grow-1 d-flex flex-column ${styles.sandboxWrapper}`}>
       {/* Real-time Dimensions & Compliance Bar */}
-      <div className={`${styles.statsBar} d-flex flex-wrap align-items-center justify-content-between gap-2 px-3 py-2`}>
+      <div className={`d-flex flex-wrap align-items-center justify-content-between gap-2 px-3 py-2 flex-shrink-0 ${styles.statsBar}`}>
         <div className="d-flex align-items-center gap-2">
-          <span className={styles.deviceBadge}>{deviceCategory}</span>
-          <span className={styles.dimensionText}>
+          <span className={`text-uppercase fw-bold rounded-1 ${styles.deviceBadge}`}>{deviceCategory}</span>
+          <span className={`font-monospace ${styles.dimensionText}`}>
             <strong>{width}px</strong> × <strong>{height}px</strong>
           </span>
           <span className={styles.targetRange}>
@@ -87,12 +87,12 @@ export const ViewportSandbox: React.FC<ViewportSandboxProps> = ({
 
         <div className="d-flex align-items-center gap-2">
           {isHeightCompliant ? (
-            <span className={`${styles.statusBadge} ${styles.statusCompliant}`}>
+            <span className={`d-inline-flex align-items-center gap-1 fw-semibold rounded-1 ${styles.statusBadge} ${styles.statusCompliant}`}>
               <CheckCircle2 size={13} />
               <span>Height In-Spec</span>
             </span>
           ) : (
-            <span className={`${styles.statusBadge} ${styles.statusWarning}`}>
+            <span className={`d-inline-flex align-items-center gap-1 fw-semibold rounded-1 ${styles.statusBadge} ${styles.statusWarning}`}>
               <AlertCircle size={13} />
               <span>
                 {height < minHeight ? `Below Min (${minHeight}px)` : `Exceeds Max (${maxHeight}px)`}
@@ -103,21 +103,21 @@ export const ViewportSandbox: React.FC<ViewportSandboxProps> = ({
       </div>
 
       {/* Resizable Canvas Area with Dot Grid */}
-      <div className={styles.canvasArea}>
-        <Group orientation="horizontal" className={styles.panelGroup}>
+      <div className={`w-100 flex-grow-1 d-flex flex-column justify-content-center align-items-center p-3 p-md-4 ${styles.canvasArea}`}>
+        <Group orientation="horizontal" className={`w-100 flex-grow-1 d-flex align-items-center ${styles.panelGroup}`}>
           <Panel
             panelRef={panelRef}
             defaultSize="100%"
             minSize="25%"
-            className={styles.activePanel}
+            className={`d-flex flex-column justify-content-center h-100 ${styles.activePanel}`}
           >
-            <div ref={containerRef} className={styles.previewContainer}>
+            <div ref={containerRef} className={`w-100 d-flex flex-column justify-content-center my-auto ${styles.previewContainer}`}>
               {children}
             </div>
           </Panel>
 
-          <Separator className={styles.resizeHandle}>
-            <div className={styles.handleGrip}>
+          <Separator className={`d-flex align-items-center justify-content-center user-select-none ${styles.resizeHandle}`}>
+            <div className={`d-flex align-items-center justify-content-center rounded-2 ${styles.handleGrip}`}>
               <GripVertical size={14} />
             </div>
           </Separator>

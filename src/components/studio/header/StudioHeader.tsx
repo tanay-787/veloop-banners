@@ -41,14 +41,14 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
   onResetView,
 }) => {
   return (
-    <header className={styles.header}>
+    <header className={`sticky-top w-100 ${styles.header}`}>
       <div className="container-fluid px-3 px-md-4">
         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 py-2">
           {/* Left: View Mode Switcher */}
-          <div className={styles.modeToggleGroup}>
+          <div className={`d-flex align-items-center gap-1 p-1 rounded-2 ${styles.modeToggleGroup}`}>
             <button
               type="button"
-              className={`${styles.modeBtn} ${viewMode === 'feed' ? styles.modeBtnActive : ''}`}
+              className={`d-flex align-items-center gap-2 border-0 fw-semibold rounded-1 ${styles.modeBtn} ${viewMode === 'feed' ? styles.modeBtnActive : ''}`}
               onClick={() => onViewModeChange('feed')}
             >
               <Layers size={14} />
@@ -56,7 +56,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
             </button>
             <button
               type="button"
-              className={`${styles.modeBtn} ${viewMode === 'studio' ? styles.modeBtnActive : ''}`}
+              className={`d-flex align-items-center gap-2 border-0 fw-semibold rounded-1 ${styles.modeBtn} ${viewMode === 'studio' ? styles.modeBtnActive : ''}`}
               onClick={() => onViewModeChange('studio')}
             >
               <Sparkles size={14} />
@@ -66,19 +66,19 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
 
           {/* Center (in Studio mode): Banner Selector Tabs */}
           {viewMode === 'studio' && (
-            <div className={`${styles.tabGroup} d-flex align-items-center gap-1 overflow-x-auto`}>
+            <div className="d-flex align-items-center gap-1 overflow-x-auto">
               {BANNERS.map((banner) => {
                 const isActive = activeBanner === banner.id
                 return (
                   <button
                     key={banner.id}
                     type="button"
-                    className={`${styles.tabBtn} ${isActive ? styles.tabBtnActive : ''}`}
+                    className={`d-flex align-items-center gap-2 border-0 rounded-2 text-nowrap ${styles.tabBtn} ${isActive ? styles.tabBtnActive : ''}`}
                     onClick={() => onBannerSelect(banner.id)}
                   >
-                    <span className={styles.tabNum}>{banner.number}</span>
-                    <span className={styles.tabIcon}>{banner.icon}</span>
-                    <span className={styles.tabLabel}>{banner.label}</span>
+                    <span className={`font-monospace ${styles.tabNum}`}>{banner.number}</span>
+                    <span>{banner.icon}</span>
+                    <span>{banner.label}</span>
                   </button>
                 )
               })}
@@ -88,11 +88,11 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
           {/* Right (in Studio mode): Viewport Controls */}
           {viewMode === 'studio' && (
             <div className="d-flex align-items-center gap-2">
-              <div className={styles.viewportControls}>
+              <div className={`d-flex align-items-center gap-1 p-1 rounded-2 ${styles.viewportControls}`}>
                 <button
                   type="button"
                   title="Fluid Width (100%)"
-                  className={`${styles.viewportBtn} ${activePreset === 'fluid' ? styles.viewportBtnActive : ''}`}
+                  className={`d-flex align-items-center gap-1 border-0 rounded-1 ${styles.viewportBtn} ${activePreset === 'fluid' ? styles.viewportBtnActive : ''}`}
                   onClick={() => onPresetChange?.('fluid')}
                 >
                   <Maximize2 size={13} />
@@ -101,7 +101,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 <button
                   type="button"
                   title="Desktop View (1280px)"
-                  className={`${styles.viewportBtn} ${activePreset === 'desktop' ? styles.viewportBtnActive : ''}`}
+                  className={`d-flex align-items-center gap-1 border-0 rounded-1 ${styles.viewportBtn} ${activePreset === 'desktop' ? styles.viewportBtnActive : ''}`}
                   onClick={() => onPresetChange?.('desktop')}
                 >
                   <Monitor size={13} />
@@ -110,7 +110,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 <button
                   type="button"
                   title="Tablet View (768px)"
-                  className={`${styles.viewportBtn} ${activePreset === 'tablet' ? styles.viewportBtnActive : ''}`}
+                  className={`d-flex align-items-center gap-1 border-0 rounded-1 ${styles.viewportBtn} ${activePreset === 'tablet' ? styles.viewportBtnActive : ''}`}
                   onClick={() => onPresetChange?.('tablet')}
                 >
                   <Tablet size={13} />
@@ -119,7 +119,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 <button
                   type="button"
                   title="Mobile View (375px)"
-                  className={`${styles.viewportBtn} ${activePreset === 'mobile' ? styles.viewportBtnActive : ''}`}
+                  className={`d-flex align-items-center gap-1 border-0 rounded-1 ${styles.viewportBtn} ${activePreset === 'mobile' ? styles.viewportBtnActive : ''}`}
                   onClick={() => onPresetChange?.('mobile')}
                 >
                   <Smartphone size={13} />
@@ -131,7 +131,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 <button
                   type="button"
                   title="Reset Preview"
-                  className={styles.iconBtn}
+                  className={`d-flex align-items-center justify-content-center border-0 rounded-1 ${styles.iconBtn}`}
                   onClick={onResetView}
                 >
                   <RotateCcw size={13} />
