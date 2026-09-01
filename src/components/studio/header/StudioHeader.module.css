@@ -1,0 +1,148 @@
+.header {
+  background-color: var(--color-card-surface);
+  border-bottom: 1px solid rgba(254, 253, 252, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Mode Toggle Group (All Banners vs Studio) */
+.modeToggleGroup {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-neutral-soft);
+  border: 1px solid rgba(254, 253, 252, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.modeBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modeBtn:hover {
+  color: var(--color-white);
+}
+
+.modeBtnActive {
+  background-color: var(--color-card-surface);
+  color: var(--color-white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Banner Selector Tabs */
+.tabGroup {
+  display: flex;
+  align-items: center;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.tabBtn:hover {
+  background-color: rgba(254, 253, 252, 0.05);
+  color: var(--color-white);
+}
+
+.tabBtnActive {
+  background-color: var(--color-neutral-soft);
+  border-color: rgba(254, 253, 252, 0.15);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.tabNum {
+  font-family: monospace;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.tabIcon {
+  font-size: 0.8rem;
+}
+
+/* Viewport Controls */
+.viewportControls {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-neutral-soft);
+  border: 1px solid rgba(254, 253, 252, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.viewportBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.viewportBtn:hover {
+  color: var(--color-white);
+}
+
+.viewportBtnActive {
+  background-color: var(--color-card-surface);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(254, 253, 252, 0.15);
+  margin: 0 2px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(254, 253, 252, 0.65);
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iconBtn:hover {
+  color: var(--color-white);
+}

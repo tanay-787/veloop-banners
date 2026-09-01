@@ -1,0 +1,135 @@
+.sandboxWrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-body);
+  min-height: 0;
+}
+
+.statsBar {
+  background-color: var(--color-card-surface);
+  border-bottom: 1px solid rgba(254, 253, 252, 0.08);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.deviceBadge {
+  background-color: var(--color-neutral-soft);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(254, 253, 252, 0.12);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dimensionText {
+  color: var(--color-white);
+  font-family: monospace;
+  font-size: 0.82rem;
+}
+
+.targetRange {
+  color: rgba(254, 253, 252, 0.5);
+  font-size: 0.75rem;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.statusCompliant {
+  background-color: rgba(254, 253, 252, 0.1);
+  color: var(--color-white);
+  border: 1px solid rgba(254, 253, 252, 0.2);
+}
+
+.statusWarning {
+  background-color: rgba(254, 253, 252, 0.05);
+  color: rgba(254, 253, 252, 0.7);
+  border: 1px solid rgba(254, 253, 252, 0.15);
+}
+
+/* Canvas & Resizable Panel Styles - Seamless Full-Height Stretch */
+.canvasArea {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Subtle dot grid pattern seamlessly covering full height */
+  background-image: radial-gradient(rgba(254, 253, 252, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.panelGroup {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.activePanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+  height: 100%;
+}
+
+.previewContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto 0;
+  transition: width 0.1s ease;
+}
+
+.resizeHandle {
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: col-resize;
+  position: relative;
+  user-select: none;
+}
+
+.handleGrip {
+  width: 8px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: var(--color-card-surface);
+  border: 1px solid rgba(254, 253, 252, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(254, 253, 252, 0.6);
+  transition: all 0.2s ease;
+}
+
+.resizeHandle:hover .handleGrip {
+  background-color: var(--color-neutral-soft);
+  color: var(--color-white);
+  border-color: rgba(254, 253, 252, 0.3);
+  height: 60px;
+}
+
+.emptyPanel {
+  background: transparent;
+}
