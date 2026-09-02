@@ -1,0 +1,42 @@
+.card {
+  background-color: var(--color-card-surface);
+  border: 1px solid rgba(254, 253, 252, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Desktop Strict Range: 410px - 450px */
+@media (min-width: 1025px) {
+  .card {
+    min-height: 410px;
+    max-height: 450px;
+    padding: 32px 36px;
+  }
+}
+
+/* Tablet Strict Range: 380px - 540px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card {
+    min-height: 380px;
+    max-height: 540px;
+    padding: 28px 30px;
+  }
+}
+
+/* Mobile Strict Range: 330px - 520px */
+@media (max-width: 640px) {
+  .card {
+    min-height: 330px;
+    max-height: 520px;
+    padding: 20px;
+  }
+}
+
+.visualContainer {
+  position: relative;
+  min-height: 200px;
+}
