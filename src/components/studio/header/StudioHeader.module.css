@@ -15,7 +15,7 @@
   font-size: 0.78rem;
   padding: 5px 10px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .modeBtn:hover {
@@ -23,8 +23,8 @@
 }
 
 .modeBtnActive {
-  background-color: var(--color-card-surface);
-  color: var(--color-white);
+  background-color: var(--color-card-surface) !important;
+  color: var(--color-white) !important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -45,9 +45,9 @@
 }
 
 .tabBtnActive {
-  background-color: var(--color-neutral-soft);
-  border-color: rgba(254, 253, 252, 0.15);
-  color: var(--color-white);
+  background-color: var(--color-neutral-soft) !important;
+  border-color: rgba(254, 253, 252, 0.15) !important;
+  color: var(--color-white) !important;
   font-weight: 600;
 }
 
@@ -68,7 +68,7 @@
   font-weight: 500;
   padding: 4px 8px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .viewportBtn:hover {
@@ -76,16 +76,10 @@
 }
 
 .viewportBtnActive {
-  background-color: var(--color-card-surface);
-  color: var(--color-white);
+  background-color: var(--color-card-surface) !important;
+  color: var(--color-white) !important;
   font-weight: 600;
-}
-
-.divider {
-  width: 1px;
-  height: 14px;
-  background-color: rgba(254, 253, 252, 0.15);
-  margin: 0 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .iconBtn {
@@ -93,7 +87,7 @@
   color: rgba(254, 253, 252, 0.65);
   padding: 4px 6px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .iconBtn:hover {
