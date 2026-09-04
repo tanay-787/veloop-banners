@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Desktop Strict Range: 410px - 450px */

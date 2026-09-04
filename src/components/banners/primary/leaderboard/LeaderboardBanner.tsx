@@ -67,7 +67,7 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
       <div className="d-flex align-items-center gap-3 pt-1">
         <button
           type="button"
-          className={`btn d-inline-flex align-items-center gap-2 rounded-3 fw-bold ${styles.ctaButton}`}
+          className={`d-inline-flex align-items-center gap-2 rounded-3 fw-bold ${styles.ctaButton}`}
           onClick={handleCtaClick}
         >
           <span>Check Rankings</span>

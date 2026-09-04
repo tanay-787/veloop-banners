@@ -2,7 +2,9 @@
   background: radial-gradient(circle at 85% 50%, rgba(238, 183, 27, 0.1) 0%, transparent 60%),
               radial-gradient(circle at 20% 80%, rgba(147, 202, 237, 0.04) 0%, transparent 50%),
               #000105;
-  border-color: rgba(254, 253, 252, 0.12);
+  border-color: rgba(238, 183, 27, 0.25);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Badge Group */
@@ -140,16 +142,22 @@
   font-size: 1.3rem;
   padding: 10px 22px;
   box-shadow: inset 0 0 24px rgba(238, 183, 27, 0.35), 0 0 28px rgba(238, 183, 27, 0.28);
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ctaButton:hover,
 .ctaButton:focus,
+.ctaButton:focus-visible,
 .ctaButton:active {
   background: radial-gradient(ellipse at center, rgba(238, 183, 27, 0.12) 0%, transparent 80%);
   color: #EEB71B;
   border-color: rgba(238, 183, 27, 0.6);
   box-shadow: inset 0 0 24px rgba(238, 183, 27, 0.35), 0 0 28px rgba(238, 183, 27, 0.28);
+  outline: none !important;
 }
 
 .ctaArrow {
