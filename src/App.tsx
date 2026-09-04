@@ -1,6 +1,9 @@
 import { StudioShell } from '@/components/studio/StudioShell'
 import { LeaderboardBanner } from '@/components/banners/primary/leaderboard/LeaderboardBanner'
 import { WatchAdBanner } from '@/components/banners/primary/watch-ad/WatchAdBanner'
+import { ContactUsBanner } from '@/components/banners/secondary/contact-us/ContactUsBanner'
+import { FollowEarnBanner } from '@/components/banners/secondary/follow-earn/FollowEarnBanner'
+import { DailyBonusBanner } from '@/components/banners/secondary/daily-bonus/DailyBonusBanner'
 import type { BannerId } from '@/components/studio/header/StudioHeader'
 import './App.css'
 
@@ -11,6 +14,12 @@ export default function App() {
         return <LeaderboardBanner />
       case 'watch-ads':
         return <WatchAdBanner />
+      case 'contact-us':
+        return <ContactUsBanner />
+      case 'follow-earn':
+        return <FollowEarnBanner />
+      case 'daily-bonus':
+        return <DailyBonusBanner />
       default:
         return (
           <div className="w-100 d-flex align-items-center justify-content-center p-5 rounded-4 border border-secondary border-opacity-25">
@@ -25,6 +34,9 @@ export default function App() {
       <div className="d-flex flex-column gap-4 w-100">
         <LeaderboardBanner />
         <WatchAdBanner />
+        <ContactUsBanner />
+        <FollowEarnBanner />
+        <DailyBonusBanner />
       </div>
     )
   }

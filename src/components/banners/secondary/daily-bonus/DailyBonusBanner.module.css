@@ -1,0 +1,128 @@
+.bannerBackground {
+  background: radial-gradient(circle at 82% 50%, rgba(238, 183, 27, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(254, 212, 38, 0.05) 0%, transparent 50%),
+              #000105;
+  border-color: rgba(238, 183, 27, 0.2);
+}
+
+/* Badge Group */
+.badgeGroup {
+  font-size: 0.75rem;
+}
+
+.badgeNumBox {
+  background-color: var(--color-white);
+  color: #000105;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+}
+
+.badgeNum {
+  font-size: 0.75rem;
+}
+
+.badgeCategory {
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+/* Typography */
+.title {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: rgba(254, 253, 252, 0.7);
+  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  line-height: 1.45;
+  max-width: 440px;
+}
+
+/* CTA Button - Gold Solid */
+.ctaButton {
+  background: linear-gradient(135deg, #EEB71B 0%, #F5C642 100%);
+  color: #000035;
+  border: 1px solid rgba(238, 183, 27, 0.5);
+  font-size: 0.88rem;
+  padding: 10px 22px;
+  box-shadow: 0 4px 16px rgba(238, 183, 27, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #F5C642 0%, #FED426 100%);
+  color: #000035;
+  border-color: #EEB71B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(238, 183, 27, 0.45);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.claimedButton {
+  background: rgba(74, 222, 128, 0.15) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(74, 222, 128, 0.4) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  cursor: default;
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover:not(.claimedButton) .ctaIcon {
+  transform: scale(1.1);
+}
+
+/* Right Side Graphic */
+.graphicWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.ambientGlow {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(238, 183, 27, 0.16) 0%, rgba(254, 212, 38, 0.06) 50%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.streakImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.streakImage:hover {
+  transform: scale(1.02) translateY(-3px);
+  filter: drop-shadow(0 16px 36px rgba(238, 183, 27, 0.25));
+}
+
+@media (max-width: 640px) {
+  .streakImage {
+    max-height: 220px;
+  }
+}

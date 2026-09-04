@@ -1,0 +1,158 @@
+.bannerBackground {
+  background: radial-gradient(circle at 82% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+              #000105;
+  border-color: rgba(254, 253, 252, 0.12);
+}
+
+/* Badge Group */
+.badgeGroup {
+  font-size: 0.75rem;
+}
+
+.badgeNumBox {
+  background-color: var(--color-white);
+  color: #000105;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+}
+
+.badgeNum {
+  font-size: 0.75rem;
+}
+
+.badgeCategory {
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+/* Typography */
+.title {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.titleHighlight {
+  color: #93CAED;
+}
+
+.description {
+  color: rgba(254, 253, 252, 0.7);
+  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  line-height: 1.45;
+  max-width: 440px;
+}
+
+/* Quick Email Pill */
+.emailPill {
+  background-color: rgba(147, 202, 237, 0.06);
+  border: 1px solid rgba(147, 202, 237, 0.22);
+  color: rgba(254, 253, 252, 0.85);
+  font-size: 0.8rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.emailText {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: rgba(254, 253, 252, 0.85);
+}
+
+.copyBtn {
+  background: transparent;
+  color: rgba(254, 253, 252, 0.6);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.copyBtn:hover {
+  color: var(--color-white);
+}
+
+.copyIcon {
+  color: rgba(254, 253, 252, 0.65);
+}
+
+.copiedIcon {
+  color: #4ade80;
+}
+
+/* CTA Button */
+.ctaButton {
+  background-color: var(--color-neutral-soft);
+  color: var(--color-white);
+  border: 1px solid rgba(254, 253, 252, 0.2);
+  font-size: 0.88rem;
+  padding: 10px 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaButton:hover {
+  background-color: rgba(254, 253, 252, 0.1);
+  color: var(--color-white);
+  border-color: rgba(254, 253, 252, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: scale(1.1);
+}
+
+/* Right Side Graphic */
+.graphicWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.ambientGlow {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.supportImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.supportImage:hover {
+  transform: scale(1.02) translateY(-3px);
+  filter: drop-shadow(0 16px 36px rgba(56, 189, 248, 0.22));
+}
+
+@media (max-width: 640px) {
+  .supportImage {
+    max-height: 220px;
+  }
+}

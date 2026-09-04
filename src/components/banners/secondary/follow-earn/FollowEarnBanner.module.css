@@ -1,0 +1,127 @@
+.bannerBackground {
+  background: radial-gradient(circle at 82% 50%, rgba(168, 85, 247, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(126, 34, 206, 0.05) 0%, transparent 50%),
+              #000105;
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Badge Group */
+.badgeGroup {
+  font-size: 0.75rem;
+}
+
+.badgeNumBox {
+  background-color: var(--color-white);
+  color: #000105;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+}
+
+.badgeNum {
+  font-size: 0.75rem;
+}
+
+.badgeCategory {
+  color: rgba(254, 253, 252, 0.65);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+/* Typography */
+.title {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: rgba(254, 253, 252, 0.7);
+  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  line-height: 1.45;
+  max-width: 440px;
+}
+
+/* CTA Button - Purple Pill */
+.ctaButton {
+  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%);
+  color: var(--color-white);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  box-shadow: 0 4px 16px rgba(126, 34, 206, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+  color: var(--color-white);
+  border-color: rgba(168, 85, 247, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(126, 34, 206, 0.5);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.arrowCircle {
+  width: 22px;
+  height: 22px;
+  background-color: rgba(254, 253, 252, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaButton:hover .arrowCircle {
+  background-color: rgba(254, 253, 252, 0.3);
+  transform: translateX(2px);
+}
+
+.ctaArrow {
+  color: var(--color-white);
+}
+
+/* Right Side Graphic */
+.graphicWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.ambientGlow {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, rgba(126, 34, 206, 0.06) 50%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.socialImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.socialImage:hover {
+  transform: scale(1.02) translateY(-3px);
+  filter: drop-shadow(0 16px 36px rgba(168, 85, 247, 0.25));
+}
+
+@media (max-width: 640px) {
+  .socialImage {
+    max-height: 220px;
+  }
+}
