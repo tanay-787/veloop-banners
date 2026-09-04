@@ -36,7 +36,41 @@
   }
 }
 
+.rightCol {
+  position: relative;
+  height: 100%;
+}
+
 .visualContainer {
   position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 200px;
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .rightCol {
+    margin-top: -28px;
+    margin-bottom: -28px;
+    height: calc(100% + 56px) !important;
+  }
+
+  .visualContainer {
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .rightCol {
+    margin-top: -32px;
+    margin-bottom: -32px;
+    height: calc(100% + 64px) !important;
+  }
+
+  .visualContainer {
+    padding-right: 36px;
+  }
 }

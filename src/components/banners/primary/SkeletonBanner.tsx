@@ -26,21 +26,19 @@ export const SkeletonBanner: React.FC<PrimarySkeletonBannerProps> = ({
       {children ? (
         children
       ) : (
-        <div className="container-fluid h-100 p-0 d-flex flex-column justify-content-between">
-          {/* Top Badge Slot */}
-          {badge && <div className="mb-2 mb-md-3">{badge}</div>}
-
-          {/* Main 2-Column Responsive Layout */}
-          <div className="row g-4 align-items-center flex-grow-1">
-            {/* Left Column: Typography & CTAs */}
-            <div className="col-12 col-lg-6 d-flex flex-column justify-content-center">
+        <div className="container-fluid h-100 p-0 d-flex flex-column">
+          {/* Main 2-Column Responsive Layout: 5:7 split for optimal visual impact */}
+          <div className="row g-4 align-items-center flex-grow-1 h-100">
+            {/* Left Column: Badge, Typography & CTAs */}
+            <div className="col-12 col-lg-5 d-flex flex-column justify-content-center">
+              {badge && <div className="mb-2 mb-md-3">{badge}</div>}
               <div className="d-flex flex-column gap-3">
                 {leftContent}
               </div>
             </div>
 
-            {/* Right Column: Large Illustrative Visual */}
-            <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center h-100">
+            {/* Right Column: Large Illustrative Visual filling full available height */}
+            <div className={`col-12 col-lg-7 d-flex align-items-center justify-content-center h-100 ${styles.rightCol}`}>
               <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.visualContainer}`}>
                 {rightContent}
               </div>
