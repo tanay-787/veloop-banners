@@ -26,15 +26,13 @@ export const SkeletonBanner: React.FC<SecondarySkeletonBannerProps> = ({
       {children ? (
         children
       ) : (
-        <div className="container-fluid h-100 p-0 d-flex flex-column justify-content-between">
-          {/* Top Compact Badge Slot */}
-          {badge && <div className="mb-2 mb-md-3">{badge}</div>}
-
+        <div className="container-fluid h-100 p-0 d-flex flex-column">
           {/* Main 2-Column Responsive Layout (5:7 ratio for wide visual cards) */}
-          <div className="row g-4 align-items-center flex-grow-1">
+          <div className="row g-4 align-items-center flex-grow-1 h-100">
             {/* Left Column: Typography & Action items */}
-            <div className="col-12 col-lg-5 d-flex flex-column justify-content-center">
-              <div className="d-flex flex-column gap-3">
+            <div className={`col-12 col-lg-5 d-flex flex-column justify-content-center h-100 ${styles.leftCol}`}>
+              {badge && <div className="mb-2 mb-md-2">{badge}</div>}
+              <div className="d-flex flex-column gap-2 gap-md-3">
                 {leftContent}
               </div>
             </div>

@@ -2,7 +2,7 @@
   background-color: #000105;
   border: 1px solid rgba(254, 253, 252, 0.1);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px 24px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   .card {
     min-height: 410px;
     max-height: 450px;
-    padding: 30px 32px;
+    padding: 18px 32px;
   }
 }
 
@@ -23,7 +23,7 @@
   .card {
     min-height: 380px;
     max-height: 540px;
-    padding: 26px 28px;
+    padding: 18px 28px;
   }
 }
 
@@ -32,8 +32,14 @@
   .card {
     min-height: 330px;
     max-height: 520px;
-    padding: 20px;
+    padding: 16px 20px;
   }
+}
+
+.leftCol {
+  position: relative;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .widgetContainer {

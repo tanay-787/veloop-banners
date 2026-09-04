@@ -1,6 +1,6 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
-import { ArrowRight, Coins } from 'lucide-react'
+import { ArrowRight, Coins, Trophy } from 'lucide-react'
 import { SkeletonBanner } from '../SkeletonBanner'
 import styles from './LeaderboardBanner.module.css'
 
@@ -29,13 +29,15 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
 
   // Top Status Badge: [ 01 ] [ 🏆 COMPETITION STAGE ACTIVE ]
   const badgeNode = (
-    <div className={`d-inline-flex align-items-center gap-2 ${styles.badgeGroup}`}>
-      <div className={`d-inline-flex align-items-center justify-content-center px-2 py-1 rounded-2 ${styles.badgeNumBox}`}>
-        <span className={`font-monospace fw-bold ${styles.badgeNum}`}>01</span>
+    <div className={`d-inline-flex align-items-center flex-nowrap gap-2 ${styles.badgeGroup}`}>
+      <div className={styles.badgeNumBox}>
+        <span className={`fw-bold ${styles.badgeNum}`}>01</span>
       </div>
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill ${styles.statusBadge}`}>
-        <span className={styles.badgePulseDot} />
-        <span className="text-uppercase fw-semibold">COMPETITION STAGE ACTIVE</span>
+      <div className={`d-inline-flex align-items-center text-nowrap pe-3 py-1 rounded-pill ${styles.statusBadge}`}>
+        <div className={styles.trophyEllipse}>
+          <Trophy fill="#EEB71B" color="#EEB71B" className={styles.trophyIcon} />
+        </div>
+        <span className="text-uppercase fw-semibold text-nowrap">COMPETITION STAGE ACTIVE</span>
       </div>
     </div>
   )
@@ -69,7 +71,7 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
           onClick={handleCtaClick}
         >
           <span>Check Rankings</span>
-          <ArrowRight size={16} className={styles.ctaArrow} />
+          <ArrowRight className={styles.ctaArrow} />
         </button>
       </div>
     </>

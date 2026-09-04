@@ -9,48 +9,91 @@
 .badgeGroup {
   font-size: 0.72rem;
   letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .badgeNumBox {
-  background-color: var(--color-neutral-soft);
-  border: 1px solid rgba(238, 183, 27, 0.45);
+  background-color: transparent;
+  border: 1px solid rgba(238, 183, 27, 0.4);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .badgeNum {
   color: #EEB71B;
-  font-size: 0.75rem;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  line-height: 1.2;
 }
 
 /* Status Badge */
 .statusBadge {
-  background-color: var(--color-neutral-soft);
-  border: 1px solid rgba(254, 253, 252, 0.12);
-  color: var(--color-white);
-  font-size: 0.72rem;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  border: 1px solid rgba(238, 183, 27, 0.4);
+  color: #EEB71B;
+  font-size: 1rem;
   letter-spacing: 0.06em;
+  padding-left: 2.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.badgePulseDot {
-  width: 6px;
-  height: 6px;
+.trophyEllipse {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -1px;
+  aspect-ratio: 1 / 1;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  background-color: #EEB71B;
-  box-shadow: 0 0 8px #EEB71B;
-  animation: pulseGlow 2s infinite ease-in-out;
+  border: 1px solid rgba(238, 183, 27, 0.4);
+  background-color: #000105;
+  color: #EEB71B;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+.trophyIcon {
+  width: 14px;
+  height: 14px;
+}
+
+@media (min-width: 1025px) {
+  .trophyIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Tablet adjustments: prevent wrapping & preserve exact badge geometry */
+@media (max-width: 1024px) {
+  .statusBadge {
+    font-size: 0.8rem;
+    padding-left: 2.1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .badgeNum {
+    font-size: 1.05rem;
+    padding: 0.2rem;
+  }
 }
 
 /* Typography */
 .title {
   color: var(--color-white);
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 .titleHighlight {
@@ -58,16 +101,16 @@
 }
 
 .description {
-  color: rgba(254, 253, 252, 0.7);
-  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
-  line-height: 1.45;
-  max-width: 480px;
+  color: rgba(254, 253, 252, 0.75);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.5;
+  max-width: 350px;
 }
 
 /* Prize Pool Metric Pill */
 .poolPill {
-  background-color: rgba(238, 183, 27, 0.07);
-  border: 1px solid rgba(238, 183, 27, 0.28);
+  background-color: transparent;
+  border: 1px solid rgba(180, 177, 171, 0.4);
   color: rgba(254, 253, 252, 0.85);
   font-size: 0.82rem;
   width: fit-content;
@@ -87,29 +130,31 @@
 
 /* CTA Button - Gold Outline */
 .ctaButton {
-  background: transparent;
+  width: 100%;
+  max-width: 350px;
+  justify-content: center;
+  align-items: baseline;
+  background: radial-gradient(ellipse at center, rgba(238, 183, 27, 0.12) 0%, transparent 80%);
   color: #EEB71B;
-  border: 1px solid #EEB71B;
-  font-size: 0.88rem;
+  border: 1px solid rgba(238, 183, 27, 0.6);
+  font-size: 1.3rem;
   padding: 10px 22px;
-  box-shadow: 0 2px 10px rgba(238, 183, 27, 0.15);
+  box-shadow: inset 0 0 24px rgba(238, 183, 27, 0.35), 0 0 28px rgba(238, 183, 27, 0.28);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ctaButton:hover {
-  background: rgba(238, 183, 27, 0.12);
-  color: #f7d66d;
-  border-color: #f7d66d;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(238, 183, 27, 0.3);
-}
-
+.ctaButton:hover,
+.ctaButton:focus,
 .ctaButton:active {
-  transform: translateY(0);
+  background: radial-gradient(ellipse at center, rgba(238, 183, 27, 0.12) 0%, transparent 80%);
+  color: #EEB71B;
+  border-color: rgba(238, 183, 27, 0.6);
+  box-shadow: inset 0 0 24px rgba(238, 183, 27, 0.35), 0 0 28px rgba(238, 183, 27, 0.28);
 }
 
 .ctaArrow {
   transition: transform 0.2s ease;
+  block-size: 1.3rem;
 }
 
 .ctaButton:hover .ctaArrow {

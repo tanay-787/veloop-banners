@@ -20,7 +20,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
       particleCount: 40,
       spread: 60,
       origin: { x, y },
-      colors: ['#93CAED', '#38BDF8', '#60A5FA', '#FEFDFC'],
+      colors: ['#93CAED', '#1886FF', '#60A5FA', '#FEFDFC'],
       ticks: 200,
     })
 
@@ -29,15 +29,15 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
 
   // Top Status Badge: [ 02 ] [ ▷ ON-DEMAND REWARDS ]
   const badgeNode = (
-    <div className={`d-inline-flex align-items-center gap-2 ${styles.badgeGroup}`}>
-      <div className={`d-inline-flex align-items-center justify-content-center px-2 py-1 rounded-2 ${styles.badgeNumBox}`}>
-        <span className={`font-monospace fw-bold ${styles.badgeNum}`}>02</span>
+    <div className={`d-inline-flex align-items-center flex-nowrap gap-2 ${styles.badgeGroup}`}>
+      <div className={styles.badgeNumBox}>
+        <span className={`fw-bold ${styles.badgeNum}`}>02</span>
       </div>
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill ${styles.statusBadge}`}>
-        <div className={`d-flex align-items-center justify-content-center ${styles.playCircle}`}>
-          <Play size={10} className={styles.playIcon} fill="currentColor" />
+      <div className={`d-inline-flex align-items-center text-nowrap pe-3 py-1 rounded-pill ${styles.statusBadge}`}>
+        <div className={styles.playEllipse}>
+          <Play fill="#1886FF" color="#1886FF" className={styles.playIcon} />
         </div>
-        <span className="text-uppercase fw-semibold">ON-DEMAND REWARDS</span>
+        <span className="text-uppercase fw-semibold text-nowrap">ON-DEMAND REWARDS</span>
       </div>
     </div>
   )
@@ -47,7 +47,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
     <>
       <div className="d-flex flex-column gap-2">
         <h2 className={`fw-extrabold m-0 ${styles.title}`}>
-          <span>Watch Ads. </span>
+          <span>Watch Ads.</span><br />
           <span className={styles.titleHighlight}>Earn VEs.</span>
         </h2>
         <p className={`m-0 ${styles.description}`}>
@@ -75,7 +75,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
           onClick={handleCtaClick}
         >
           <span>Watch &amp; Earn</span>
-          <ArrowRight size={16} className={styles.ctaArrow} />
+          <ArrowRight className={styles.ctaArrow} />
         </button>
       </div>
     </>

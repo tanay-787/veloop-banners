@@ -2,7 +2,7 @@
   background-color: #000105;
   border: 1px solid rgba(254, 253, 252, 0.1);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px 24px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   .card {
     min-height: 410px;
     max-height: 450px;
-    padding: 32px 36px;
+    padding: 18px 36px;
   }
 }
 
@@ -23,7 +23,7 @@
   .card {
     min-height: 380px;
     max-height: 540px;
-    padding: 28px 30px;
+    padding: 18px 30px;
   }
 }
 
@@ -32,8 +32,14 @@
   .card {
     min-height: 330px;
     max-height: 520px;
-    padding: 20px;
+    padding: 16px 20px;
   }
+}
+
+.leftCol {
+  position: relative;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .rightCol {
@@ -53,9 +59,9 @@
 
 @media (min-width: 992px) and (max-width: 1024px) {
   .rightCol {
-    margin-top: -28px;
-    margin-bottom: -28px;
-    height: calc(100% + 56px) !important;
+    margin-top: -18px;
+    margin-bottom: -18px;
+    height: calc(100% + 36px) !important;
   }
 
   .visualContainer {
@@ -65,9 +71,9 @@
 
 @media (min-width: 1025px) {
   .rightCol {
-    margin-top: -32px;
-    margin-bottom: -32px;
-    height: calc(100% + 64px) !important;
+    margin-top: -18px;
+    margin-bottom: -18px;
+    height: calc(100% + 36px) !important;
   }
 
   .visualContainer {
