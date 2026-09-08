@@ -263,12 +263,9 @@
 }
 
 @media (min-width: 992px) {
-  .streakImage {
-    transform: scale(1.18);
-  }
-
   .streakImage:hover {
     filter: drop-shadow(0 18px 40px rgba(238, 183, 27, 0.45));
+    transform: scale(1.02);
   }
 
   .ambientGlow {

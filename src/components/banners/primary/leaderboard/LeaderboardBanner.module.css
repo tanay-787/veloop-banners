@@ -207,12 +207,9 @@
 }
 
 @media (min-width: 992px) {
-  .podiumImage {
-    transform: scale(1.20);
-  }
-
   .podiumImage:hover {
     filter: drop-shadow(0 18px 40px rgba(238, 183, 27, 0.28));
+    transform: scale(1.02);
   }
 
   .ambientGlow {

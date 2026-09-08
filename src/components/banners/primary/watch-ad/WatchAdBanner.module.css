@@ -204,12 +204,9 @@
 }
 
 @media (min-width: 992px) {
-  .walletImage {
-    transform: scale(1.20);
-  }
-
   .walletImage:hover {
     filter: drop-shadow(0 18px 40px rgba(24, 134, 255, 0.4));
+    transform: scale(1.02);
   }
 
   .ambientGlow {

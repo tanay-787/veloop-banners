@@ -60,24 +60,12 @@
 }
 
 @media (min-width: 992px) and (max-width: 1024px) {
-  .rightCol {
-    margin-top: -18px;
-    margin-bottom: -18px;
-    height: calc(100% + 36px) !important;
-  }
-
   .visualContainer {
     padding-right: 24px;
   }
 }
 
 @media (min-width: 1025px) {
-  .rightCol {
-    margin-top: -18px;
-    margin-bottom: -18px;
-    height: calc(100% + 36px) !important;
-  }
-
   .visualContainer {
     padding-right: 36px;
   }
