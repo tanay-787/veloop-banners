@@ -32,21 +32,19 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
     onClaimBonus?.()
   }
 
-  // Top Status Badge: [ 5 ] DAILY BONUS
+  // Left Badge Box: [ 5 ]
   const badgeNode = (
-    <div className={`d-inline-flex align-items-center gap-2 ${styles.badgeGroup}`}>
-      <div className={`d-inline-flex align-items-center justify-content-center px-2 py-1 rounded-2 ${styles.badgeNumBox}`}>
-        <span className={`fw-bold ${styles.badgeNum}`}>5</span>
-      </div>
-      <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>DAILY BONUS</span>
+    <div className={`d-flex align-items-center justify-content-center ${styles.badgeNumBox}`}>
+      <span className={styles.badgeNum}>5</span>
     </div>
   )
 
-  // Left Content: Headline, Description, CTA
+  // Left Content: Category, Headline, Description, CTA
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
-        <h2 className={`fw-extrabold m-0 ${styles.title}`}>
+        <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>DAILY BONUS</span>
+        <h2 className={`m-0 ${styles.title}`}>
           <span>Your Daily Bonus</span><br />
           <span>Is Waiting</span>
         </h2>
@@ -56,14 +54,17 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
       </div>
 
       {/* CTA Button */}
-      <div className="d-flex align-items-center gap-3 pt-2">
+      <div className="pt-2 pt-md-3">
         <button
           type="button"
-          className={`btn d-inline-flex align-items-center gap-2 rounded-3 fw-bold ${styles.ctaButton} ${claimed ? styles.claimedButton : ''}`}
+          className={`d-inline-flex align-items-center ${styles.ctaButton} ${claimed ? styles.claimedButton : ''}`}
           onClick={handleCtaClick}
         >
-          <span>{claimed ? 'Bonus Claimed' : 'Claim Bonus'}</span>
-          {claimed ? <Check size={16} className={styles.ctaIcon} /> : <Gift size={16} className={styles.ctaIcon} />}
+          <span className={styles.ctaText}>{claimed ? 'Bonus Claimed' : 'Claim Bonus'}</span>
+          <span className={styles.ctaDivider} />
+          <span className={styles.ctaIconWrapper}>
+            {claimed ? <Check size={18} className={styles.ctaIcon} /> : <Gift size={18} className={styles.ctaIcon} />}
+          </span>
         </button>
       </div>
     </>
