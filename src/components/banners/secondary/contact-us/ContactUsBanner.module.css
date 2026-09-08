@@ -7,8 +7,8 @@
 
 /* Badge Box */
 .badgeNumBox {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: #39506C;
+  border: 1px solid transparent;
   border-radius: 0 0 14px 0;
   width: 52px;
   height: 52px;
@@ -138,15 +138,10 @@
 }
 
 .ctaButton:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.09) 100%);
+  background-color: #39506C;
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.38);
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-}
-
-.ctaButton:active {
-  transform: translateY(0);
 }
 
 .ctaIcon {

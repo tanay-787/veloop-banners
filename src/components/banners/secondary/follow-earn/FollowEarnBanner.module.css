@@ -8,7 +8,7 @@
 /* Badge Box */
 .badgeNumBox {
   background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
-  border: 1px solid rgba(192, 132, 252, 0.45);
+  border: 1px solid transparent;
   border-radius: 0 0 14px 0;
   width: 52px;
   height: 52px;
@@ -137,13 +137,9 @@
   background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
   box-shadow: 0 6px 22px rgba(126, 34, 206, 0.5);
 }
 
-.ctaButton:active {
-  transform: translateY(0);
-}
 
 .arrowCircle {
   width: 24px;
