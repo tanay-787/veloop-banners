@@ -30,7 +30,7 @@ export const SkeletonBanner: React.FC<PrimarySkeletonBannerProps> = ({
           {/* Main 2-Column Responsive Layout: 5:7 split for optimal visual impact */}
           <div className="row g-4 align-items-center flex-grow-1 h-100">
             {/* Left Column: Badge, Typography & CTAs */}
-            <div className={`col-12 col-lg-5 d-flex flex-column justify-content-center h-100 ${styles.leftCol}`}>
+            <div className={`col-12 col-md-5 d-flex flex-column justify-content-center h-100 ${styles.leftCol}`}>
               {badge && <div className="mb-2 mb-md-2">{badge}</div>}
               <div className="d-flex flex-column gap-2 gap-md-3">
                 {leftContent}
@@ -38,7 +38,7 @@ export const SkeletonBanner: React.FC<PrimarySkeletonBannerProps> = ({
             </div>
 
             {/* Right Column: Large Illustrative Visual filling full available height */}
-            <div className={`col-12 col-lg-7 d-flex align-items-center justify-content-center h-100 ${styles.rightCol}`}>
+            <div className={`col-12 col-md-7 d-flex align-items-center justify-content-center h-100 ${styles.rightCol}`}>
               <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.visualContainer}`}>
                 {rightContent}
               </div>
