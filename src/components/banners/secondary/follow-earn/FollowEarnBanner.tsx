@@ -27,21 +27,19 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
     onExploreChannels?.()
   }
 
-  // Top Status Badge: [ 4 ] FOLLOW & EARN
+  // Left Badge Box: [ 4 ]
   const badgeNode = (
-    <div className={`d-inline-flex align-items-center gap-2 ${styles.badgeGroup}`}>
-      <div className={`d-inline-flex align-items-center justify-content-center px-2 py-1 rounded-2 ${styles.badgeNumBox}`}>
-        <span className={`fw-bold ${styles.badgeNum}`}>4</span>
-      </div>
-      <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>FOLLOW & EARN</span>
+    <div className={`d-flex align-items-center justify-content-center ${styles.badgeNumBox}`}>
+      <span className={styles.badgeNum}>4</span>
     </div>
   )
 
-  // Left Content: Headline, Description, CTA
+  // Left Content: Category, Headline, Description, CTA
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
-        <h2 className={`fw-extrabold m-0 ${styles.title}`}>
+        <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>FOLLOW &amp; EARN</span>
+        <h2 className={`m-0 ${styles.title}`}>
           Follow &amp; Earn
         </h2>
         <p className={`m-0 ${styles.description}`}>
@@ -50,16 +48,19 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
       </div>
 
       {/* CTA Button */}
-      <div className="d-flex align-items-center gap-3 pt-2">
+      <div className="pt-2 pt-md-3">
         <button
           type="button"
-          className={`btn d-inline-flex align-items-center gap-2 rounded-pill fw-bold ${styles.ctaButton}`}
+          className={`d-inline-flex align-items-center ${styles.ctaButton}`}
           onClick={handleCtaClick}
         >
-          <span>Explore Our Channels</span>
-          <div className={`d-flex align-items-center justify-content-center rounded-circle ${styles.arrowCircle}`}>
-            <ArrowRight size={13} className={styles.ctaArrow} />
-          </div>
+          <span className={styles.ctaText}>Explore Our Channels</span>
+          <span className={styles.ctaDivider} />
+          <span className={styles.ctaIconWrapper}>
+            <div className={`d-flex align-items-center justify-content-center rounded-circle ${styles.arrowCircle}`}>
+              <ArrowRight size={14} className={styles.ctaArrow} />
+            </div>
+          </span>
         </button>
       </div>
     </>
