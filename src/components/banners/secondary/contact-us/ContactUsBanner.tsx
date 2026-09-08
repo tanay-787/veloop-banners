@@ -1,5 +1,5 @@
 import React from 'react'
-import { MessageCircle } from 'lucide-react'
+import { MessageCircle, Phone } from 'lucide-react'
 import { SkeletonBanner } from '../SkeletonBanner'
 import styles from './ContactUsBanner.module.css'
 
@@ -10,20 +10,27 @@ interface ContactUsBannerProps {
 export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
   onContactSupport,
 }) => {
-  // Left Badge Box: [ 3 ]SSSS
+  // Top Status Badge: [ 03 ] [ 📞 CONTACT SUPPORT ]
   const badgeNode = (
-    <div className={`d-flex align-items-center justify-content-center ${styles.badgeNumBox}`}>
-      <span className={styles.badgeNum}>3</span>
+    <div className={`d-inline-flex align-items-center flex-nowrap gap-2 ${styles.badgeGroup}`}>
+      <div className={styles.badgeNumBox}>
+        <span className={`fw-bold ${styles.badgeNum}`}>03</span>
+      </div>
+      <div className={`d-inline-flex align-items-center text-nowrap pe-3 py-1 rounded-pill ${styles.statusBadge}`}>
+        <div className={styles.iconEllipse}>
+          <Phone size={14} className={styles.statusIcon} />
+        </div>
+        <span className="text-uppercase fw-semibold text-nowrap">CONTACT SUPPORT</span>
+      </div>
     </div>
   )
 
-  // Left Content: Category, Headline, Description, CTA Button
+  // Left Content: Headline, Description, Info Pill, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
-        <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>CONTACT US</span>
-        <h2 className={`m-0 ${styles.title}`}>
-          <span>Need Help? </span>
+        <h2 className={`fw-extrabold m-0 ${styles.title}`}>
+          <span>Need Help?</span><br />
           <span className={styles.titleHighlight}>We're Here.</span>
         </h2>
         <p className={`m-0 ${styles.description}`}>
@@ -31,8 +38,16 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
         </p>
       </div>
 
+      {/* Info Pill */}
+      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.infoPill}`}>
+        <MessageCircle size={16} className={styles.pillIcon} />
+        <span className={styles.pillText}>
+          Fast response: <strong className={styles.pillHighlight}>Under 24 hours</strong>
+        </span>
+      </div>
+
       {/* CTA Button */}
-      <div className="pt-2 pt-md-3">
+      <div className="d-flex align-items-center gap-3 pt-1">
         <button
           type="button"
           className={`d-inline-flex align-items-center ${styles.ctaButton}`}
@@ -50,7 +65,7 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
 
   // Right Content: Official 3D Support Specialist & Help Options Graphic
   const rightContentNode = (
-    <div className={`w-100 h-100 d-flex ${styles.graphicWrapper}`}>
+    <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
         src="/customer-support.png"

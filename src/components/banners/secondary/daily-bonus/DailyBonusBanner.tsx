@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import confetti from 'canvas-confetti'
-import { Gift, Check } from 'lucide-react'
+import { Gift, Check, Sparkles } from 'lucide-react'
 import { SkeletonBanner } from '../SkeletonBanner'
 import styles from './DailyBonusBanner.module.css'
 
@@ -32,29 +32,44 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
     onClaimBonus?.()
   }
 
-  // Left Badge Box: [ 5 ]
+  // Top Status Badge: [ 05 ] [ 🎁 DAILY BONUS ]
   const badgeNode = (
-    <div className={`d-flex align-items-center justify-content-center ${styles.badgeNumBox}`}>
-      <span className={styles.badgeNum}>5</span>
+    <div className={`d-inline-flex align-items-center flex-nowrap gap-2 ${styles.badgeGroup}`}>
+      <div className={styles.badgeNumBox}>
+        <span className={`fw-bold ${styles.badgeNum}`}>05</span>
+      </div>
+      <div className={`d-inline-flex align-items-center text-nowrap pe-3 py-1 rounded-pill ${styles.statusBadge}`}>
+        <div className={styles.iconEllipse}>
+          <Gift size={14} className={styles.statusIcon} />
+        </div>
+        <span className="text-uppercase fw-semibold text-nowrap">DAILY BONUS</span>
+      </div>
     </div>
   )
 
-  // Left Content: Category, Headline, Description, CTA
+  // Left Content: Headline, Description, Feature Pill, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
-        <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>DAILY BONUS</span>
-        <h2 className={`m-0 ${styles.title}`}>
-          <span>Your Daily Bonus</span><br />
-          <span>Is Waiting</span>
+        <h2 className={`fw-extrabold m-0 ${styles.title}`}>
+          <span>Your Daily Bonus.</span><br />
+          <span className={styles.titleHighlight}>Is Waiting.</span>
         </h2>
         <p className={`m-0 ${styles.description}`}>
           Check in regularly and claim your available daily bonus before the opportunity resets.
         </p>
       </div>
 
+      {/* Feature Pill */}
+      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
+        <Sparkles size={16} className={styles.pillIcon} />
+        <span className={styles.pillText}>
+          Today's bonus: <strong className={styles.pillHighlight}>+25 GEMS</strong> Available Now
+        </span>
+      </div>
+
       {/* CTA Button */}
-      <div className="pt-2 pt-md-3">
+      <div className="d-flex align-items-center gap-3 pt-1">
         <button
           type="button"
           className={`d-inline-flex align-items-center ${styles.ctaButton} ${claimed ? styles.claimedButton : ''}`}

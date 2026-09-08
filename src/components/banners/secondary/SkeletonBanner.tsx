@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './SkeletonBanner.module.css'
 
 export interface SecondarySkeletonBannerProps {
-  /** Optional compact category badge (e.g., "3 CONTACT US", "4 FOLLOW & EARN") */
+  /** Optional top status badge (e.g., "03 CONTACT US") */
   badge?: React.ReactNode
-  /** Left column content: titles, description, info items, CTAs */
+  /** Left column content: titles, description, metrics, CTAs */
   leftContent?: React.ReactNode
-  /** Right column content: modular interactive widget panels */
+  /** Right column content: large 3D visual or interactive illustration */
   rightContent?: React.ReactNode
   /** Custom children override if full layout customization is needed */
   children?: React.ReactNode
@@ -26,22 +26,20 @@ export const SkeletonBanner: React.FC<SecondarySkeletonBannerProps> = ({
       {children ? (
         children
       ) : (
-        <div className="container-fluid flex-grow-1 h-100 p-0 d-flex flex-column">
-          {/* Main 2-Column Responsive Layout (5:7 ratio for wide visual cards) */}
-          <div className="row gx-4 gy-3 gy-lg-0 flex-grow-1 h-100 m-0">
-            {/* Left Column: Typography & Action items */}
-            <div className={`col-12 col-lg-5 d-flex flex-column h-100 p-0 ${styles.leftCol}`}>
-              <div className={styles.leftContentGrid}>
-                {badge && <div className={styles.badgeCol}>{badge}</div>}
-                <div className={styles.contentCol}>
-                  {leftContent}
-                </div>
+        <div className="container-fluid h-100 p-0 d-flex flex-column">
+          {/* Main 2-Column Responsive Layout: 5:7 split for tablet landscape and desktop */}
+          <div className="row g-3 g-md-4 align-items-center flex-grow-1 h-100">
+            {/* Left Column: Badge, Typography & CTAs */}
+            <div className={`col-12 col-md-5 d-flex flex-column justify-content-center h-100 ${styles.leftCol}`}>
+              {badge && <div className="mb-2 mb-md-2">{badge}</div>}
+              <div className="d-flex flex-column gap-2 gap-md-3">
+                {leftContent}
               </div>
             </div>
 
-            {/* Right Column: Modular Interactive Widget */}
-            <div className={`col-12 col-lg-7 d-flex align-items-center justify-content-center h-100 ${styles.rightCol}`}>
-              <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.widgetContainer}`}>
+            {/* Right Column: Large Illustrative Visual */}
+            <div className={`col-12 col-md-7 d-flex align-items-center justify-content-center h-100 ${styles.rightCol}`}>
+              <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.visualContainer}`}>
                 {rightContent}
               </div>
             </div>

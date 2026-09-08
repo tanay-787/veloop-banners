@@ -2,162 +2,83 @@
   background-color: #000105;
   border: 1px solid rgba(254, 253, 252, 0.1);
   border-radius: 16px;
-  padding: 0;
+  padding: 16px 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  container-type: inline-size;
-  container-name: banner;
 }
 
-/* Desktop Strict Range: 280px - 310px */
+/* Desktop Strict Range: 410px - 450px */
 @media (min-width: 1025px) {
   .card {
-    min-height: 280px;
-    max-height: 310px;
-    padding: 0;
+    min-height: 410px;
+    max-height: 450px;
+    padding: 18px 36px;
   }
 }
 
-/* Tablet Landscape: 280px - 320px */
-@media (min-width: 992px) and (max-width: 1024px) {
+/* Tablet Strict Range: 380px - 540px */
+@media (min-width: 768px) and (max-width: 1024px) {
   .card {
-    min-height: 280px;
-    max-height: 320px;
-    padding: 0;
+    min-height: 390px;
+    max-height: 520px;
+    padding: 18px 24px;
   }
 }
 
-/* Tablet Stacked: 360px - 480px */
-@media (min-width: 641px) and (max-width: 991px) {
+/* Mobile Strict Range: 330px - 520px */
+@media (max-width: 767px) {
   .card {
-    min-height: 360px;
-    max-height: 480px;
-    padding: 0;
-  }
-}
-
-/* Mobile Strict Range: 320px - 420px */
-@media (max-width: 640px) {
-  .card {
-    min-height: 320px;
-    max-height: 420px;
-    padding: 0;
+    min-height: 330px;
+    max-height: 520px;
+    padding: 16px 18px;
   }
 }
 
 .leftCol {
   position: relative;
-  height: 100% !important;
-  align-self: stretch !important;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-@media (min-width: 1025px) {
-  .rightCol {
-    padding-right: 36px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1024px) {
-  .rightCol {
-    padding-right: 24px;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 991px) {
-  .rightCol {
-    padding: 0 24px 24px 24px;
-  }
-}
-
-@media (max-width: 640px) {
-  .rightCol {
-    padding: 0 20px 20px 20px;
-  }
-}
-
-.leftContentGrid {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  height: 100%;
-}
-
-.badgeCol {
-  flex-shrink: 0;
-}
-
-.contentCol {
-  flex: 1 1 0%;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 1.35rem;
-  padding-bottom: 1.35rem;
-}
-
-@media (max-width: 640px) {
-  .leftContentGrid {
-    gap: 12px;
-  }
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .rightCol {
   position: relative;
-  height: 100% !important;
-  align-self: stretch !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 
-.widgetContainer {
+.visualContainer {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 160px;
 }
 
-@media (min-width: 992px) and (max-width: 1024px) {
-  .widgetContainer {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .rightCol {
+    margin-top: -18px;
+    margin-bottom: -18px;
+    height: calc(100% + 36px) !important;
+  }
+
+  .visualContainer {
     padding-right: 16px;
   }
 }
 
 @media (min-width: 1025px) {
-  .widgetContainer {
-    padding-right: 24px;
-  }
-}
-
-@media (max-width: 991px) {
-  .leftCol,
   .rightCol {
-    height: auto !important;
+    margin-top: -18px;
+    margin-bottom: -18px;
+    height: calc(100% + 36px) !important;
   }
 
-  .leftContentGrid,
-  .contentCol {
-    height: auto !important;
-    justify-content: flex-start;
-    gap: 16px;
-  }
-
-  .widgetContainer {
-    padding-right: 0;
-    min-height: 180px;
+  .visualContainer {
+    padding-right: 36px;
   }
 }

@@ -1,97 +1,133 @@
 .bannerBackground {
-  background: radial-gradient(circle at 82% 50%, rgba(168, 85, 247, 0.12) 0%, transparent 60%),
+  background: radial-gradient(circle at 85% 50%, rgba(168, 85, 247, 0.14) 0%, transparent 60%),
               radial-gradient(circle at 20% 80%, rgba(126, 34, 206, 0.05) 0%, transparent 50%),
               #000105;
-  border-color: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.25);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Badge Box */
+/* Badge Group */
+.badgeGroup {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
 .badgeNumBox {
-  background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
-  border: 1px solid transparent;
-  border-radius: 0 0 14px 0;
-  width: 52px;
-  height: 52px;
-  box-shadow: 0 4px 14px rgba(126, 34, 206, 0.4);
-  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .badgeNum {
-  font-size: 1.5rem;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--color-white);
+  color: #C084FC;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  line-height: 1.2;
 }
 
-@container banner (max-width: 1024px) {
-  .badgeNumBox {
-    width: 46px;
-    height: 46px;
-    border-radius: 0 0 12px 0;
-  }
+/* Status Badge */
+.statusBadge {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #C084FC;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  padding-left: 2.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
-  .badgeNum {
-    font-size: 1.3rem;
+.iconEllipse {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -1px;
+  aspect-ratio: 1 / 1;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background-color: #000105;
+  color: #C084FC;
+}
+
+.statusIcon {
+  width: 14px;
+  height: 14px;
+}
+
+@media (min-width: 1025px) {
+  .statusIcon {
+    width: 16px;
+    height: 16px;
   }
 }
 
-@container banner (max-width: 640px) {
-  .badgeNumBox {
-    width: 38px;
-    height: 38px;
-    border-radius: 0 0 10px 0;
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .statusBadge {
+    font-size: 0.8rem;
+    padding-left: 2.1rem;
+    letter-spacing: 0.04em;
   }
 
   .badgeNum {
     font-size: 1.05rem;
+    padding: 0.2rem;
   }
-}
-
-.badgeCategory {
-  color: #c084fc;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  margin-top: 2px;
 }
 
 /* Typography */
 .title {
   color: var(--color-white);
-  font-size: 1.95rem;
-  font-size: clamp(1.75rem, 4.1cqi, 1.95rem);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-@container banner (max-width: 640px) {
-  .title {
-    font-size: 1.5rem;
-    font-size: clamp(1.4rem, 5.5cqi, 1.65rem);
-  }
-}
-
-@container banner (min-width: 1025px) {
-  .title {
-    font-size: 2.35rem;
-    font-size: clamp(2.15rem, 3cqi, 2.55rem);
-  }
+.titleHighlight {
+  color: #C084FC;
 }
 
 .description {
-  color: rgba(254, 253, 252, 0.82);
-  font-size: 0.96rem;
-  font-size: clamp(0.92rem, 1.35cqi, 1.02rem);
+  color: rgba(254, 253, 252, 0.75);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   line-height: 1.5;
   max-width: 440px;
 }
 
-@container banner (max-width: 640px) {
-  .description {
-    font-size: 0.85rem;
-    line-height: 1.45;
-  }
+/* Feature Pill */
+.featurePill {
+  background-color: transparent;
+  border: 1px solid rgba(180, 177, 171, 0.4);
+  color: rgba(254, 253, 252, 0.85);
+  font-size: 0.82rem;
+  width: fit-content;
+}
+
+.pillIcon {
+  color: #C084FC;
+}
+
+.pillText {
+  letter-spacing: 0.01em;
+}
+
+.pillHighlight {
+  color: #C084FC;
 }
 
 /* CTA Button - Purple Rounded Rectangle */
@@ -140,7 +176,6 @@
   box-shadow: 0 6px 22px rgba(126, 34, 206, 0.5);
 }
 
-
 .arrowCircle {
   width: 24px;
   height: 24px;
@@ -163,7 +198,7 @@
   color: var(--color-white);
 }
 
-@container banner (max-width: 640px) {
+@media (max-width: 640px) {
   .ctaButton {
     height: 42px;
   }
@@ -195,15 +230,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 220px;
 }
 
 .ambientGlow {
   position: absolute;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, rgba(126, 34, 206, 0.06) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(126, 34, 206, 0.06) 50%, transparent 70%);
   filter: blur(35px);
   pointer-events: none;
   z-index: 0;
@@ -216,7 +251,6 @@
   height: 100%;
   max-height: 100%;
   object-fit: contain;
-  object-position: center;
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
 }
@@ -226,18 +260,26 @@
 }
 
 @media (min-width: 992px) {
+  .socialImage {
+    transform: scale(1.18);
+  }
+
   .socialImage:hover {
     filter: drop-shadow(0 18px 40px rgba(168, 85, 247, 0.45));
   }
 
   .ambientGlow {
-    width: 95%;
-    height: 95%;
+    width: 105%;
+    height: 105%;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
+  .graphicWrapper {
+    min-height: 150px;
+  }
+
   .socialImage {
-    max-height: 220px;
+    max-height: 180px;
   }
 }

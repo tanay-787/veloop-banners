@@ -1,6 +1,6 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Share2, Sparkles } from 'lucide-react'
 import { SkeletonBanner } from '../SkeletonBanner'
 import styles from './FollowEarnBanner.module.css'
 
@@ -27,28 +27,44 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
     onExploreChannels?.()
   }
 
-  // Left Badge Box: [ 4 ]
+  // Top Status Badge: [ 04 ] [ 🌐 FOLLOW & EARN ]
   const badgeNode = (
-    <div className={`d-flex align-items-center justify-content-center ${styles.badgeNumBox}`}>
-      <span className={styles.badgeNum}>4</span>
+    <div className={`d-inline-flex align-items-center flex-nowrap gap-2 ${styles.badgeGroup}`}>
+      <div className={styles.badgeNumBox}>
+        <span className={`fw-bold ${styles.badgeNum}`}>04</span>
+      </div>
+      <div className={`d-inline-flex align-items-center text-nowrap pe-3 py-1 rounded-pill ${styles.statusBadge}`}>
+        <div className={styles.iconEllipse}>
+          <Share2 size={14} className={styles.statusIcon} />
+        </div>
+        <span className="text-uppercase fw-semibold text-nowrap">FOLLOW &amp; EARN</span>
+      </div>
     </div>
   )
 
-  // Left Content: Category, Headline, Description, CTA
+  // Left Content: Headline, Description, Feature Pill, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
-        <span className={`text-uppercase fw-semibold ${styles.badgeCategory}`}>FOLLOW &amp; EARN</span>
-        <h2 className={`m-0 ${styles.title}`}>
-          Follow &amp; Earn
+        <h2 className={`fw-extrabold m-0 ${styles.title}`}>
+          <span>Follow &amp; Earn.</span><br />
+          <span className={styles.titleHighlight}>Unlock Rewards.</span>
         </h2>
         <p className={`m-0 ${styles.description}`}>
           Follow VELOOP Rewards on our official channels and participate in eligible social campaigns to unlock rewards.
         </p>
       </div>
 
+      {/* Feature Pill */}
+      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
+        <Sparkles size={16} className={styles.pillIcon} />
+        <span className={styles.pillText}>
+          Social campaigns: <strong className={styles.pillHighlight}>Up to +500 SVEs</strong>
+        </span>
+      </div>
+
       {/* CTA Button */}
-      <div className="pt-2 pt-md-3">
+      <div className="d-flex align-items-center gap-3 pt-1">
         <button
           type="button"
           className={`d-inline-flex align-items-center ${styles.ctaButton}`}
