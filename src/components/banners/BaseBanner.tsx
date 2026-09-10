@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './SkeletonBanner.module.css'
+import styles from './BaseBanner.module.css'
 
-export interface SecondarySkeletonBannerProps {
-  /** Optional top status badge (e.g., "03 CONTACT US") */
+export interface BaseBannerProps {
+  /** Optional top status badge (e.g., "01 COMPETITION STAGE ACTIVE") */
   badge?: React.ReactNode
   /** Left column content: titles, description, metrics, CTAs */
   leftContent?: React.ReactNode
@@ -14,7 +14,7 @@ export interface SecondarySkeletonBannerProps {
   className?: string
 }
 
-export const SkeletonBanner: React.FC<SecondarySkeletonBannerProps> = ({
+export const BaseBanner: React.FC<BaseBannerProps> = ({
   badge,
   leftContent,
   rightContent,

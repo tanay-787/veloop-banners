@@ -1,6 +1,6 @@
 import React from 'react'
 import { MessageCircle, Phone } from 'lucide-react'
-import { SkeletonBanner } from '../SkeletonBanner'
+import { BaseBanner } from '../BaseBanner'
 import styles from './ContactUsBanner.module.css'
 
 interface ContactUsBannerProps {
@@ -77,7 +77,7 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
   )
 
   return (
-    <SkeletonBanner
+    <BaseBanner
       badge={badgeNode}
       leftContent={leftContentNode}
       rightContent={rightContentNode}

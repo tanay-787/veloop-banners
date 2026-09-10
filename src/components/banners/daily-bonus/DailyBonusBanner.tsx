@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import confetti from 'canvas-confetti'
 import { Gift, Check, Sparkles } from 'lucide-react'
-import { SkeletonBanner } from '../SkeletonBanner'
+import { BaseBanner } from '../BaseBanner'
 import styles from './DailyBonusBanner.module.css'
 
 interface DailyBonusBannerProps {
@@ -99,7 +99,7 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
   )
 
   return (
-    <SkeletonBanner
+    <BaseBanner
       badge={badgeNode}
       leftContent={leftContentNode}
       rightContent={rightContentNode}

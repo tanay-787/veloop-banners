@@ -1,7 +1,7 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
 import { Play, ArrowRight, ShieldCheck, Zap } from 'lucide-react'
-import { SkeletonBanner } from '../SkeletonBanner'
+import { BaseBanner } from '../BaseBanner'
 import styles from './WatchAdBanner.module.css'
 
 interface WatchAdBannerProps {
@@ -95,7 +95,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
   )
 
   return (
-    <SkeletonBanner
+    <BaseBanner
       badge={badgeNode}
       leftContent={leftContentNode}
       rightContent={rightContentNode}

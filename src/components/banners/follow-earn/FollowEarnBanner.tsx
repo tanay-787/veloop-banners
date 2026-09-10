@@ -1,7 +1,7 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
 import { ArrowRight, Share2, Sparkles } from 'lucide-react'
-import { SkeletonBanner } from '../SkeletonBanner'
+import { BaseBanner } from '../BaseBanner'
 import styles from './FollowEarnBanner.module.css'
 
 interface FollowEarnBannerProps {
@@ -96,7 +96,7 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
   )
 
   return (
-    <SkeletonBanner
+    <BaseBanner
       badge={badgeNode}
       leftContent={leftContentNode}
       rightContent={rightContentNode}

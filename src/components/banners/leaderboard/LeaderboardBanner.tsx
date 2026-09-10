@@ -1,7 +1,7 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
 import { ArrowRight, Coins, Trophy } from 'lucide-react'
-import { SkeletonBanner } from '../SkeletonBanner'
+import { BaseBanner } from '../BaseBanner'
 import styles from './LeaderboardBanner.module.css'
 
 interface LeaderboardBannerProps {
@@ -91,7 +91,7 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
   )
 
   return (
-    <SkeletonBanner
+    <BaseBanner
       badge={badgeNode}
       leftContent={leftContentNode}
       rightContent={rightContentNode}

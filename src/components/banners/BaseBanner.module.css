@@ -21,16 +21,16 @@
 }
 
 /* Tablet Strict Range: 380px - 540px */
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .card {
     min-height: 380px;
     max-height: 540px;
-    padding: 18px 30px;
+    padding: 18px 28px;
   }
 }
 
 /* Mobile Strict Range: 330px - 520px */
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .card {
     min-height: 330px;
     max-height: 520px;
@@ -56,12 +56,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 180px;
 }
 
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .visualContainer {
-    padding-right: 24px;
+    padding-right: 20px;
   }
 }
 
