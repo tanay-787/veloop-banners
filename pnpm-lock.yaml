@@ -87,6 +87,9 @@ importers:
       vite:
         specifier: ^8.2.2
         version: 8.2.2(@types/node@24.13.3)(jiti@2.6.1)
+      vite-plugin-cloudflare-quick-tunnel:
+        specifier: ^0.2.0
+        version: 0.2.0(vite@8.2.2(@types/node@24.13.3)(jiti@2.6.1))
 
 packages:
 
@@ -627,6 +630,10 @@ packages:
   cliui@9.0.1:
     resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
     engines: {node: '>=20'}
+
+  cloudflared@0.7.1:
+    resolution: {integrity: sha512-jJn1Gu9Tf4qnIu8tfiHZ25Hs8rNcRYSVf8zAd97wvYdOCzftm1CTs1S/RPhijjGi8gUT1p9yzfDi9zYlU/0RwA==}
+    hasBin: true
 
   conventional-changelog-angular@9.4.0:
     resolution: {integrity: sha512-HdxRxuS8bBXVIuo4V82gvSwAXT0vYQUizrjs/izmPg5JdDstr8v8I5hduGL3iQbG+o310dUDxC4+LetuS5hu9w==}
@@ -1182,6 +1189,12 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  vite-plugin-cloudflare-quick-tunnel@0.2.0:
+    resolution: {integrity: sha512-t0PRPW80Fz45nQZJ2qJ79xot4T1Ax0zXNoUH1YA1+Tgca195Q/9OA5dRLM4L7PfEhJxDfpys6oWpz0k/LvsUag==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      vite: ^7.0.0 || ^8.0.0
 
   vite@8.2.2:
     resolution: {integrity: sha512-cFKLV/PRgAUlIRm5WjMjJ86jrftzpqcgH+Us+DS8mI3CDNiH30Whrz8uHL3+MOLPAgqbMBAqWdAHAphOAM+z/Q==}
@@ -1826,6 +1839,8 @@ snapshots:
       strip-ansi: 7.2.0
       wrap-ansi: 9.0.2
 
+  cloudflared@0.7.1: {}
+
   conventional-changelog-angular@9.4.0:
     dependencies:
       '@conventional-changelog/template': 1.4.0
@@ -2309,6 +2324,13 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  vite-plugin-cloudflare-quick-tunnel@0.2.0(vite@8.2.2(@types/node@24.13.3)(jiti@2.6.1)):
+    dependencies:
+      cloudflared: 0.7.1
+      picocolors: 1.1.1
+      semver: 7.8.5
+      vite: 8.2.2(@types/node@24.13.3)(jiti@2.6.1)
 
   vite@8.2.2(@types/node@24.13.3)(jiti@2.6.1):
     dependencies:

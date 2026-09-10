@@ -38,6 +38,7 @@
     "husky": "^9.1.7",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.67.0",
-    "vite": "^8.2.2"
+    "vite": "^8.2.2",
+    "vite-plugin-cloudflare-quick-tunnel": "^0.2.0"
   }
 }
