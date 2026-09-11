@@ -241,7 +241,6 @@
 @media (min-width: 992px) {
   .socialImage:hover {
     filter: drop-shadow(0 18px 40px rgba(168, 85, 247, 0.45));
-    transform: scale(1.02);
   }
 
   .ambientGlow {
@@ -252,10 +251,11 @@
 
 @media (max-width: 767px) {
   .graphicWrapper {
-    min-height: 150px;
+    min-height: 120px;
   }
 
   .socialImage {
     max-height: 180px;
   }
 }
+

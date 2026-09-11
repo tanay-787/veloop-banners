@@ -212,8 +212,12 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
+  .graphicWrapper {
+    min-height: 120px;
+  }
+
   .podiumImage {
-    max-height: 200px;
+    max-height: 138px;
   }
 }

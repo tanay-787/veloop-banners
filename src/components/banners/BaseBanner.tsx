@@ -26,9 +26,9 @@ export const BaseBanner: React.FC<BaseBannerProps> = ({
       {children ? (
         children
       ) : (
-        <div className="container-fluid h-100 p-0 d-flex flex-column">
+        <div className="container-fluid h-100 flex-grow-1 p-0 d-flex flex-column">
           {/* Main 2-Column Responsive Layout: 5:7 split for tablet landscape and desktop */}
-          <div className="row g-3 g-md-4 align-items-center flex-grow-1 h-100">
+          <div className="row g-2 g-md-4 align-items-center flex-grow-1 h-100">
             {/* Left Column: Badge, Typography & CTAs */}
             <div className={`col-12 col-md-5 d-flex flex-column justify-content-center h-100 ${styles.leftCol}`}>
               {badge && <div className="mb-2 mb-md-2">{badge}</div>}
