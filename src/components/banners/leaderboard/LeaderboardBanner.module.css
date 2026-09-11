@@ -63,6 +63,27 @@
   color: #EEB71B;
 }
 
+.trophyEllipse::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid rgba(238, 183, 27, 0.75);
+  pointer-events: none;
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  45%, 100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
 .trophyIcon {
   width: 14px;
   height: 14px;
@@ -131,12 +152,20 @@
 
 .ctaButton:hover,
 .ctaButton:focus,
-.ctaButton:focus-visible,
-.ctaButton:active {
+.ctaButton:focus-visible {
   background: radial-gradient(ellipse at center, rgba(238, 183, 27, 0.12) 0%, transparent 80%);
   color: #EEB71B;
   border-color: rgba(238, 183, 27, 0.6);
   box-shadow: inset 0 0 24px rgba(238, 183, 27, 0.35), 0 0 28px rgba(238, 183, 27, 0.28);
+  outline: none !important;
+}
+
+.ctaButton:active {
+  background: radial-gradient(ellipse at center, rgba(238, 183, 27, 0.16) 0%, transparent 80%);
+  color: #EEB71B;
+  border-color: rgba(238, 183, 27, 0.7);
+  box-shadow: inset 0 0 28px rgba(238, 183, 27, 0.4), 0 0 32px rgba(238, 183, 27, 0.32);
+  transform: translateY(1.5px);
   outline: none !important;
 }
 
@@ -162,13 +191,35 @@
 
 .ambientGlow {
   position: absolute;
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(238, 183, 27, 0.18) 0%, rgba(147, 202, 237, 0.06) 50%, transparent 70%);
-  filter: blur(35px);
+  background: radial-gradient(circle, rgba(238, 183, 27, 0.45) 0%, rgba(238, 183, 27, 0.18) 45%, transparent 70%);
+  filter: blur(40px);
   pointer-events: none;
   z-index: 0;
+  opacity: 0.35;
+  will-change: opacity, transform, filter;
+}
+
+.ambientGlowPulse {
+  animation: glowSurge 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glowSurge {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.25);
+    filter: blur(48px);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
 }
 
 .podiumImage {
@@ -179,11 +230,27 @@
   max-height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .podiumImage:hover {
-  filter: drop-shadow(0 16px 36px rgba(238, 183, 27, 0.22));
+  filter: drop-shadow(0 16px 36px rgba(238, 183, 27, 0.4));
+}
+
+.podiumGlowPulse {
+  animation: podiumGlowAnim 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes podiumGlowAnim {
+  0% {
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  }
+  35% {
+    filter: drop-shadow(0 0 32px rgba(238, 183, 27, 0.85)) drop-shadow(0 0 60px rgba(238, 183, 27, 0.55));
+  }
+  100% {
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  }
 }
 
 @media (min-width: 1025px) {
@@ -209,6 +276,28 @@
 
   .podiumImage {
     max-height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trophyEllipse::before {
+    animation: none;
+  }
+
+  .ambientGlowPulse {
+    animation: none;
+  }
+
+  .podiumGlowPulse {
+    animation: none;
+  }
+
+  .ctaButton {
+    transition: none;
+  }
+
+  .ctaArrow {
+    transition: none;
   }
 }
 

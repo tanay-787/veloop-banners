@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import confetti from 'canvas-confetti'
 import { ArrowRight, Trophy } from 'lucide-react'
 import { BaseBanner } from '../BaseBanner'
@@ -11,6 +11,8 @@ interface LeaderboardBannerProps {
 export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
   onCheckRankings,
 }) => {
+  const [isGlowing, setIsGlowing] = useState(false)
+
   const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const x = (rect.left + rect.width / 2) / window.innerWidth
@@ -23,6 +25,10 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
       colors: ['#EEB71B', '#FAD055', '#93CAED', '#FEFDFC'],
       ticks: 200,
     })
+
+    // Trigger ambient glow pulse on graphic backdrop
+    setIsGlowing(true)
+    setTimeout(() => setIsGlowing(false), 900)
 
     onCheckRankings?.()
   }
@@ -72,11 +78,11 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
   // Right Content: Official 3D Trophy Podium Graphic
   const rightContentNode = (
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
-      <div className={styles.ambientGlow} />
+      <div className={`${styles.ambientGlow} ${isGlowing ? styles.ambientGlowPulse : ''}`} />
       <img
         src="/trophy-podium.webp"
         alt="Leaderboard Trophy and Top 3 Podium"
-        className={styles.podiumImage}
+        className={`${styles.podiumImage} ${isGlowing ? styles.podiumGlowPulse : ''}`}
         loading="eager"
       />
     </div>
