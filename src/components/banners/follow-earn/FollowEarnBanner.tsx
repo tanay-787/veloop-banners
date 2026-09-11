@@ -79,7 +79,7 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/social-campaign.webp"
+        src={`${import.meta.env.BASE_URL}social-campaign.webp`}
         alt="VELOOP Social Campaign and SVE Rewards"
         className={styles.socialImage}
         loading="lazy"

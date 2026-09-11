@@ -60,7 +60,7 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/customer-support.webp"
+        src={`${import.meta.env.BASE_URL}customer-support.webp`}
         alt="Customer Support Specialist and Help Center"
         className={styles.supportImage}
         loading="lazy"

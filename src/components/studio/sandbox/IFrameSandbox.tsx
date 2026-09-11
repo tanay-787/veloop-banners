@@ -23,7 +23,7 @@ export const IFrameSandbox: React.FC<IFrameSandboxProps> = ({
 
     // Initialize clean document skeleton
     doc.open()
-    doc.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /></head><body><div id="sandbox-mount"></div></body></html>')
+    doc.write(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><base href="${document.baseURI}" /></head><body><div id="sandbox-mount"></div></body></html>`)
     doc.close()
 
     // Copy head stylesheets, fonts, and inline styles from parent document

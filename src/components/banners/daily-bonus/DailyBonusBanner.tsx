@@ -82,7 +82,7 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/daily-streak.webp"
+        src={`${import.meta.env.BASE_URL}daily-streak.webp`}
         alt="Daily Bonus Gift Box and 7-Day Streak Tracker"
         className={styles.streakImage}
         loading="lazy"
