@@ -6,6 +6,7 @@ import cloudflareQuickTunnel from 'vite-plugin-cloudflare-quick-tunnel'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/veloop-banners/',
   server: {
     host: true,
     allowedHosts: ['.trycloudflare.com', '.app.github.dev', '.githubpreview.dev'],
