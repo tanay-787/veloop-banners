@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import confetti from 'canvas-confetti'
-import { Gift, Check, Sparkles } from 'lucide-react'
+import { Gift, Check } from 'lucide-react'
 import { BaseBanner } from '../BaseBanner'
 import styles from './DailyBonusBanner.module.css'
 
@@ -47,7 +47,7 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
     </div>
   )
 
-  // Left Content: Headline, Description, Feature Pill, CTA Button
+  // Left Content: Headline, Description, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
@@ -58,14 +58,6 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
         <p className={`m-0 ${styles.description}`}>
           Check in regularly and claim your available daily bonus before the opportunity resets.
         </p>
-      </div>
-
-      {/* Feature Pill */}
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
-        <Sparkles size={16} className={styles.pillIcon} />
-        <span className={styles.pillText}>
-          Today's bonus: <strong className={styles.pillHighlight}>+25 GEMS</strong> Available Now
-        </span>
       </div>
 
       {/* CTA Button */}
@@ -90,10 +82,10 @@ export const DailyBonusBanner: React.FC<DailyBonusBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/daily-streak.png"
+        src="/daily-streak.webp"
         alt="Daily Bonus Gift Box and 7-Day Streak Tracker"
         className={styles.streakImage}
-        loading="eager"
+        loading="lazy"
       />
     </div>
   )

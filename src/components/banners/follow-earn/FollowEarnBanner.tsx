@@ -1,6 +1,6 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
-import { ArrowRight, Share2, Sparkles } from 'lucide-react'
+import { ArrowRight, Share2 } from 'lucide-react'
 import { BaseBanner } from '../BaseBanner'
 import styles from './FollowEarnBanner.module.css'
 
@@ -42,7 +42,7 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
     </div>
   )
 
-  // Left Content: Headline, Description, Feature Pill, CTA Button
+  // Left Content: Headline, Description, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
@@ -53,14 +53,6 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
         <p className={`m-0 ${styles.description}`}>
           Follow VELOOP Rewards on our official channels and participate in eligible social campaigns to unlock rewards.
         </p>
-      </div>
-
-      {/* Feature Pill */}
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
-        <Sparkles size={16} className={styles.pillIcon} />
-        <span className={styles.pillText}>
-          Social campaigns: <strong className={styles.pillHighlight}>Up to +500 SVEs</strong>
-        </span>
       </div>
 
       {/* CTA Button */}
@@ -87,10 +79,10 @@ export const FollowEarnBanner: React.FC<FollowEarnBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/social-campaign.png"
+        src="/social-campaign.webp"
         alt="VELOOP Social Campaign and SVE Rewards"
         className={styles.socialImage}
-        loading="eager"
+        loading="lazy"
       />
     </div>
   )

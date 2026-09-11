@@ -109,27 +109,6 @@
   max-width: 440px;
 }
 
-/* Feature Pill */
-.featurePill {
-  background-color: transparent;
-  border: 1px solid rgba(180, 177, 171, 0.4);
-  color: rgba(254, 253, 252, 0.85);
-  font-size: 0.82rem;
-  width: fit-content;
-}
-
-.pillIcon {
-  color: #EEB71B;
-}
-
-.pillText {
-  letter-spacing: 0.01em;
-}
-
-.pillHighlight {
-  color: #EEB71B;
-}
-
 /* CTA Button - Gold Rounded Rectangle */
 .ctaButton {
   background: linear-gradient(135deg, #eeb71b 0%, #d97706 100%);

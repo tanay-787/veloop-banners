@@ -86,7 +86,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/ve-wallet.png"
+        src="/ve-wallet.webp"
         alt="Watch Ads Video Player and VE Wallet"
         className={styles.walletImage}
         loading="eager"

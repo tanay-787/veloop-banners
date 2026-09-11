@@ -82,7 +82,7 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
     <div className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.graphicWrapper}`}>
       <div className={styles.ambientGlow} />
       <img
-        src="/trophy-podium.png"
+        src="/trophy-podium.webp"
         alt="Leaderboard Trophy and Top 3 Podium"
         className={styles.podiumImage}
         loading="eager"
