@@ -43,7 +43,7 @@ export const ViewportSandbox: React.FC<ViewportSandboxProps> = ({
       }
     } else if (targetPreset === 'tablet') {
       if (containerWidth > 0) {
-        const pct = Math.min(100, Math.max(25, (768 / containerWidth) * 100))
+        const pct = Math.min(100, Math.max(25, (820 / containerWidth) * 100))
         panelRef.current.resize(`${pct.toFixed(2)}%`)
       } else {
         panelRef.current.resize('65%')

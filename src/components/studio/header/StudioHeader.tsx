@@ -119,7 +119,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 </button>
                 <button
                   type="button"
-                  title="Tablet View (768px)"
+                  title="Tablet View (820px)"
                   className={`btn d-flex align-items-center gap-1 border-0 rounded-1 ${styles.viewportBtn} ${activePreset === 'tablet' ? styles.viewportBtnActive : ''}`}
                   onClick={() => onPresetChange?.('tablet')}
                 >

@@ -249,7 +249,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   .graphicWrapper {
     min-height: 120px;
   }
@@ -258,4 +258,5 @@
     max-height: 180px;
   }
 }
+
 

@@ -21,7 +21,7 @@
 }
 
 /* Tablet Strict Range: 380px - 540px */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 641px) and (max-width: 1024px) {
   .card {
     min-height: 380px;
     max-height: 540px;
@@ -51,16 +51,17 @@
 }
 
 /* Mobile Strict Range: 330px - 520px */
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   .card {
     min-height: 330px;
     max-height: 520px;
-    padding: 16px 20px;
+    padding: 14px 18px;
   }
 
   .visualContainer {
     min-height: 0;
   }
 }
+
 
 

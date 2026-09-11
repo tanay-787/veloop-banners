@@ -212,12 +212,28 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(1.6rem, 5.5vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .poolPill {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
+
   .graphicWrapper {
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .podiumImage {
-    max-height: 138px;
+    max-height: 200px;
   }
 }
+
