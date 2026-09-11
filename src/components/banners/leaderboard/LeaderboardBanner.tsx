@@ -8,13 +8,31 @@ interface LeaderboardBannerProps {
   onCheckRankings?: () => void
 }
 
+interface Ripple {
+  x: number
+  y: number
+  size: number
+  id: number
+}
+
 export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
   onCheckRankings,
 }) => {
   const [isGlowing, setIsGlowing] = useState(false)
+  const [ripples, setRipples] = useState<Ripple[]>([])
 
   const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
+    const clickX = e.clientX - rect.left
+    const clickY = e.clientY - rect.top
+    const size = Math.max(rect.width, rect.height) * 2.2
+    const rippleId = Date.now() + Math.random()
+
+    setRipples((prev) => [...prev, { x: clickX, y: clickY, size, id: rippleId }])
+    setTimeout(() => {
+      setRipples((prev) => prev.filter((r) => r.id !== rippleId))
+    }, 650)
+
     const x = (rect.left + rect.width / 2) / window.innerWidth
     const y = (rect.top + rect.height / 2) / window.innerHeight
 
@@ -68,7 +86,19 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
           className={`d-inline-flex align-items-center gap-2 rounded-3 fw-bold ${styles.ctaButton}`}
           onClick={handleCtaClick}
         >
-          <span>Check Rankings</span>
+          {ripples.map((r) => (
+            <span
+              key={r.id}
+              className={styles.ripple}
+              style={{
+                top: r.y - r.size / 2,
+                left: r.x - r.size / 2,
+                width: r.size,
+                height: r.size,
+              }}
+            />
+          ))}
+          <span className={styles.ctaLabel}>Check Rankings</span>
           <ArrowRight className={styles.ctaArrow} />
         </button>
       </div>
