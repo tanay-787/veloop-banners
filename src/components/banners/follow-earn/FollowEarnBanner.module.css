@@ -250,6 +250,16 @@
 }
 
 @media (max-width: 640px) {
+  .title {
+    font-size: clamp(2rem, 6.2vw, 2.45rem);
+    line-height: 1.1;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
   .graphicWrapper {
     min-height: 120px;
   }

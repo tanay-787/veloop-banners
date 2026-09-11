@@ -1,6 +1,6 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
-import { ArrowRight, Coins, Trophy } from 'lucide-react'
+import { ArrowRight, Trophy } from 'lucide-react'
 import { BaseBanner } from '../BaseBanner'
 import styles from './LeaderboardBanner.module.css'
 
@@ -42,7 +42,7 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
     </div>
   )
 
-  // Left Content: Headline, Description, Prize Pool Metric, CTA
+  // Left Content: Headline, Description, CTA
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
@@ -53,14 +53,6 @@ export const LeaderboardBanner: React.FC<LeaderboardBannerProps> = ({
         <p className={`m-0 ${styles.description}`}>
           Complete activities, earn rewards, gain XP, and compete with other users to climb the leaderboard.
         </p>
-      </div>
-
-      {/* Prize Pool Metric Pill */}
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.poolPill}`}>
-        <Coins size={16} className={styles.poolIcon} />
-        <span className={styles.poolText}>
-          Current pool: <strong className={styles.poolHighlight}>50,000 VEs</strong> in prizes
-        </span>
       </div>
 
       {/* CTA Button */}

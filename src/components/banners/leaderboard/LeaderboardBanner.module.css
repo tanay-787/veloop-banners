@@ -109,26 +109,6 @@
   max-width: 350px;
 }
 
-/* Prize Pool Metric Pill */
-.poolPill {
-  background-color: transparent;
-  border: 1px solid rgba(180, 177, 171, 0.4);
-  color: rgba(254, 253, 252, 0.85);
-  font-size: 0.82rem;
-  width: fit-content;
-}
-
-.poolIcon {
-  color: #EEB71B;
-}
-
-.poolText {
-  letter-spacing: 0.01em;
-}
-
-.poolHighlight {
-  color: #EEB71B;
-}
 
 /* CTA Button - Gold Outline */
 .ctaButton {
@@ -214,18 +194,13 @@
 
 @media (max-width: 640px) {
   .title {
-    font-size: clamp(1.6rem, 5.5vw, 2rem);
-    line-height: 1.15;
+    font-size: clamp(2rem, 6.2vw, 2.45rem);
+    line-height: 1.1;
   }
 
   .description {
-    font-size: 0.88rem;
-    line-height: 1.4;
-  }
-
-  .poolPill {
-    padding: 4px 10px;
-    font-size: 0.78rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
   }
 
   .graphicWrapper {

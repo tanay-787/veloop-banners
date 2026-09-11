@@ -25,7 +25,7 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
     </div>
   )
 
-  // Left Content: Headline, Description, Info Pill, CTA Button
+  // Left Content: Headline, Description, CTA Button
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
@@ -36,14 +36,6 @@ export const ContactUsBanner: React.FC<ContactUsBannerProps> = ({
         <p className={`m-0 ${styles.description}`}>
           Have a question, concern, or need assistance? Get in touch with the VELOOP Rewards team.
         </p>
-      </div>
-
-      {/* Info Pill */}
-      <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.infoPill}`}>
-        <MessageCircle size={16} className={styles.pillIcon} />
-        <span className={styles.pillText}>
-          Fast response: <strong className={styles.pillHighlight}>Under 24 hours</strong>
-        </span>
       </div>
 
       {/* CTA Button */}

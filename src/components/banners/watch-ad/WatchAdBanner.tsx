@@ -1,6 +1,6 @@
 import React from 'react'
 import confetti from 'canvas-confetti'
-import { Play, ArrowRight, ShieldCheck, Zap } from 'lucide-react'
+import { Play, ArrowRight } from 'lucide-react'
 import { BaseBanner } from '../BaseBanner'
 import styles from './WatchAdBanner.module.css'
 
@@ -42,7 +42,7 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
     </div>
   )
 
-  // Left Content: Headline, Description, Feature Pills, CTA
+  // Left Content: Headline, Description, CTA
   const leftContentNode = (
     <>
       <div className="d-flex flex-column gap-2">
@@ -53,18 +53,6 @@ export const WatchAdBanner: React.FC<WatchAdBannerProps> = ({
         <p className={`m-0 ${styles.description}`}>
           Watch eligible advertisements and earn VEs for completing ad activities.
         </p>
-      </div>
-
-      {/* Feature Badges: "No Daily Cap" & "Instant Credits" */}
-      <div className="d-flex flex-wrap align-items-center gap-2">
-        <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
-          <ShieldCheck size={16} className={styles.pillIcon} />
-          <span className={styles.pillText}>No Daily Cap</span>
-        </div>
-        <div className={`d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 ${styles.featurePill}`}>
-          <Zap size={16} className={styles.pillIcon} />
-          <span className={styles.pillText}>Instant Credits</span>
-        </div>
       </div>
 
       {/* CTA Button */}
